@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "FigmaPartner": {
+      "headers": {
+        "X-Figma-Token": "${FIGMA_TOKEN}",
+        "X-Username": "jinnyyang"
+      },
+      "security_zone": "devnet",
+      "transportType": "streamable-http",
+      "url": "http://mcp-figma-partner.music.woa.com/mcp",
+      "timeout": 60000
+    }
+  }
+}
