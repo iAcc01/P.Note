@@ -2,6 +2,8 @@ import React from 'react'
 import { Navigate, type RouteObject } from 'react-router-dom'
 import MyCreations from '@/pages/MyCreations'
 import PromptDetail from '@/pages/PromptDetail'
+import SkillsMarket from '@/pages/SkillsMarket'
+import SkillDetail from '@/pages/SkillDetail'
 
 import PlaceholderPage from '@/pages/PlaceholderPage'
 
@@ -31,8 +33,12 @@ export const routes: RouteObject[] = [
     element: <PlaceholderPage title="添加提示词" icon="folder" />,
   },
   {
-    path: '/debug-tools',
-    element: <PlaceholderPage title="调试工具" icon="test-tube" />,
+    path: '/skills',
+    element: <SkillsMarket />,
+  },
+  {
+    path: '/skills/:slug',
+    element: <SkillDetail />,
   },
   {
     path: '/inspiration',
@@ -60,8 +66,8 @@ export interface NavItem {
  */
 export const navItems: NavItem[] = [
   { path: '/discover', label: '发现', iconName: 'compass' },
-  { path: '/my-creations', label: '我的创作', iconName: 'sparkles' },
-  { path: '/debug-tools', label: '调试工具', iconName: 'test-tube' },
+  { path: '/my-creations', label: '提示词', iconName: 'sparkles' },
+  { path: '/skills', label: '技能', iconName: 'zap' },
   { path: '/inspiration', label: '灵感广场', iconName: 'folder-open' },
 ]
 

@@ -107,7 +107,7 @@ const MyCreations: React.FC = () => {
       {/* 页面标题 */}
       <div style={styles.pageHeader}>
         <Sparkles size={28} strokeWidth={1.5} color="var(--color-text-primary)" />
-        <h1 style={styles.pageTitle}>我的提示词</h1>
+        <h1 style={styles.pageTitle}>提示词</h1>
       </div>
 
       {/* Tab 栏 + 添加按钮 */}

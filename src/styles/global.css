@@ -234,3 +234,14 @@ input::placeholder,
 textarea::placeholder {
   color: var(--color-text-placeholder);
 }
+
+/* ── 技能卡片 ─────────────────────────────────────────────── */
+.skill-card {
+  background: var(--color-bg-card);
+}
+
+.skill-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%), var(--color-bg-card);
+}

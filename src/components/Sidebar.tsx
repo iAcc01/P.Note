@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import {
   Compass,
   Sparkles,
-  TestTube,
+  Zap,
   FolderOpen,
   Settings,
   PanelLeftClose,
@@ -23,7 +23,7 @@ interface SidebarProps {
 const iconMap: Record<string, React.FC<{ size: number; strokeWidth: number }>> = {
   'compass': Compass,
   'sparkles': Sparkles,
-  'test-tube': TestTube,
+  'zap': Zap,
   'folder-open': FolderOpen,
   'settings': Settings,
 }
