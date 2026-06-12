@@ -241,11 +241,15 @@ const SkillsMarket: React.FC = () => {
 
   const getTabStyle = (tabKey: string, isActive: boolean): React.CSSProperties => {
     const isHovered = hoveredTab === tabKey && !isActive
-    const highlighted = isActive || isHovered
     return {
       ...styles.tabBtn,
-      background: highlighted ? 'var(--color-bg-sidebar)' : 'var(--color-bg-card)',
-      borderColor: 'var(--color-border)',
+      background: isActive
+        ? 'var(--color-primary)'
+        : isHovered
+          ? 'var(--color-bg-sidebar)'
+          : 'var(--color-bg-card)',
+      borderColor: isActive ? 'var(--color-primary)' : 'var(--color-border)',
+      boxShadow: 'none',
     }
   }
 
@@ -310,17 +314,17 @@ const SkillsMarket: React.FC = () => {
                       aria-selected={isActive}
                       style={{
                         ...styles.dropdownItem,
-                        background: isActive ? 'var(--color-bg-hover)' : isHovered ? 'var(--color-bg-muted)' : 'transparent',
+                        background: isActive ? 'var(--color-primary)' : isHovered ? 'var(--color-bg-muted)' : 'transparent',
                         fontWeight: isActive ? 600 : 400,
                       }}
                       onClick={() => { setActiveTab(tab.key); setDropdownOpen(false) }}
                       onMouseEnter={() => setHoveredOption(tab.key)}
                       onMouseLeave={() => setHoveredOption(null)}
                     >
-                      <span style={{ ...styles.tabIcon, color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-tertiary)' }}>
+                      <span style={{ ...styles.tabIcon, color: isActive ? 'var(--color-on-primary)' : 'var(--color-text-tertiary)' }}>
                         {tab.icon}
                       </span>
-                      <span style={{ color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-secondary)', fontSize: 14, lineHeight: '20px' }}>
+                      <span style={{ color: isActive ? 'var(--color-on-primary)' : 'var(--color-text-secondary)', fontSize: 14, lineHeight: '20px' }}>
                         {tab.label}
                       </span>
                     </div>
@@ -343,10 +347,10 @@ const SkillsMarket: React.FC = () => {
                   aria-selected={isActive}
                   role="tab"
                 >
-                  <span style={{ ...styles.tabIcon, color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-tertiary)' }}>
+                  <span style={{ ...styles.tabIcon, color: isActive ? 'var(--color-on-primary)' : 'var(--color-text-tertiary)' }}>
                     {tab.icon}
                   </span>
-                  <span style={{ ...styles.tabLabel, color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-tertiary)', fontWeight: isActive ? 600 : 400 }}>
+                  <span style={{ ...styles.tabLabel, color: isActive ? 'var(--color-on-primary)' : 'var(--color-text-tertiary)', fontWeight: isActive ? 600 : 400 }}>
                     {tab.label}
                   </span>
                 </button>
@@ -708,6 +712,7 @@ const styles: Record<string, React.CSSProperties> = {
     border: '1px solid var(--color-border)',
     borderRadius: 20,
     background: 'var(--color-bg-card)',
+    outline: 'none',
     cursor: 'pointer',
     fontFamily: 'var(--font-family)',
     transition: 'all 0.15s ease',

@@ -5,6 +5,7 @@ import {
   Sparkles,
   Zap,
   FolderOpen,
+  Bot,
   Settings,
   PanelLeftClose,
   PanelLeftOpen,
@@ -25,6 +26,7 @@ const iconMap: Record<string, React.FC<{ size: number; strokeWidth: number }>> =
   'sparkles': Sparkles,
   'zap': Zap,
   'folder-open': FolderOpen,
+  'bot': Bot,
   'settings': Settings,
 }
 
